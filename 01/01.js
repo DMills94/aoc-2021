@@ -1,4 +1,4 @@
-const { stringToArray, txtToArray } = require("../inputHelper");
+const { exampleToArray, fileToArray } = require("../inputHelper");
 
 const example = `199
 200
@@ -11,30 +11,32 @@ const example = `199
 260
 263`;
 
-// const input = stringToArray(example);
-const input = txtToArray("./01.txt");
+// const input = exampleToArray(example);
+const input = fileToArray("./01.txt");
 
 // Part 1
 let increasesP1 = 0;
 
-
 input.forEach((val, i) => {
-  if (+val > +input[i - 1]) increasesP1++
-})
+  if (+val > +input[i - 1]) increasesP1++;
+});
 
-console.log(`1: The depth increases ${increasesP1} times`)
+console.log(`1: The depth increases ${increasesP1} times`);
 
 // Part 2
-let prev3, increasesP2 = 0;
+let prev3,
+  increasesP2 = 0;
 
 input.forEach((val, i) => {
-  const a = +val, b = +input[i + 1], c = +input[i + 2];
+  const a = +val,
+    b = +input[i + 1],
+    c = +input[i + 2];
 
   if (!b || !c) return;
 
   const sum = a + b + c;
-  if (sum > prev3) increasesP2++
+  if (sum > prev3) increasesP2++;
   prev3 = sum;
-})
+});
 
-console.log(`2: The trio of depths increases ${increasesP2} times`)
+console.log(`2: The trio of depths increases ${increasesP2} times`);

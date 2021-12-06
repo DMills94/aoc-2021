@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const txtToArray = (path, separator = "\n") => {
+const fileToArray = (path, separator = "\n") => {
   return fs
     .readFileSync(path, "utf-8")
     .toString()
@@ -8,8 +8,8 @@ const txtToArray = (path, separator = "\n") => {
     .split(separator);
 };
 
-const stringToArray = (string, separator = "\n") => {
+const exampleToArray = (string, separator = "\n") => {
   return string.replace(/\r\n/g, "\n").split(separator);
 };
 
-module.exports = { txtToArray, stringToArray };
+module.exports = { fileToArray, exampleToArray };
