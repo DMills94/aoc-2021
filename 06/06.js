@@ -35,9 +35,8 @@ const simulateDays = (ages, maxDays, currentDay = 0) => {
   newAges[6] = ages[0] + ages[7];
   newAges[7] = ages[8];
   newAges[8] = ages[0];
-
-  currentDay++;
-  return simulateDays(newAges, maxDays, currentDay);
+  
+  return simulateDays(newAges, maxDays, currentDay + 1);
 };
 
 console.log(
