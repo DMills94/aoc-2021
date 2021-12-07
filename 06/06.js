@@ -7,22 +7,22 @@ const input = fileToArray("./06.txt", ",").map(val => +val);
 
 // Part 1
 const startingAges = {
-  0: BigInt(0),
-  1: BigInt(0),
-  2: BigInt(0),
-  3: BigInt(0),
-  4: BigInt(0),
-  5: BigInt(0),
-  6: BigInt(0),
-  7: BigInt(0),
-  8: BigInt(0),
+  0: 0,
+  1: 0,
+  2: 0,
+  3: 0,
+  4: 0,
+  5: 0,
+  6: 0,
+  7: 0,
+  8: 0,
 };
 
 // Process input
-input.forEach((number) => (startingAges[number] += 1n));
+input.forEach((number) => (startingAges[number] += 1));
 
 const simulateDays = (ages, maxDays, currentDay = 0) => {
-  if (currentDay === maxDays) return Object.values(ages).reduce((a, b) => a + b, BigInt(0));
+  if (currentDay === maxDays) return Object.values(ages).reduce((a, b) => a + b, 0);
     
   const newAges = {};
 
