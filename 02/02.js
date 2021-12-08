@@ -1,4 +1,4 @@
-const { exampleToArray, fileToArray } = require("../inputHelper");
+const { exampleToArray, fileToArray } = require("../input-parser");
 
 const example = `forward 5
 down 5

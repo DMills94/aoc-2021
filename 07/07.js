@@ -1,4 +1,4 @@
-const { exampleToArray, fileToArray } = require("../inputHelper");
+const { exampleToArray, fileToArray } = require("../input-parser");
 
 const example = `16,1,2,0,4,2,7,1,2,14`;
 
