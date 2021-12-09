@@ -38,7 +38,7 @@ for (i = 0; i < input.length; i++) {
   }
 }
 
-console.log(`P1: Sum of risk factors is ${lowPoints.reduce((a, b) => a + b.height + 1, 0)}`);
+console.log(`P1: Sum of risk factors for ${lowPoints.length} low points is ${lowPoints.reduce((a, b) => a + b.height + 1, 0)}`);
 
 // Part 2
 const checkForBasinNeighbours = (x, y) => {
@@ -77,7 +77,7 @@ lowPointsCoords.forEach(([x, y]) => {
 const largest3Basins = basinSizes.sort((a, b) => a - b).splice(-3);
 
 console.log(
-  `P2: There are ${basinSizes.length} basins, which the product of the largest 3 being ${largest3Basins.reduce(
+  `P2: There are ${lowPoints.length} basins, which the product of the largest 3 being ${largest3Basins.reduce(
     (a, b) => a * b
   )}`
 );
