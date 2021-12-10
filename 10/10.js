@@ -56,7 +56,6 @@ input.forEach((line, i) => {
   }
 });
 
-// console.log(firstIncorrectChars)
 const points = firstIncorrectChars.reduce(
   (sum, char) => sum + INVALID_CHAR_POINTS[char],
   0
