@@ -56,23 +56,21 @@ const visualise = set => {
 // Part 1
 const fold = (instruction) => {
   const [foldCoord, foldNum] = instruction;
-  let updatedDotsMap = new Set(dotsMap);
 
   for (let coord of dotsMap) {
     const [x, y] = coord.split(",");
     const foldingCoordinate = foldCoord === "x" ? +x : +y;
     if (foldingCoordinate <= foldNum) continue;
     else {
-      const distanceToLine = foldingCoordinate - foldNum;
-      updatedDotsMap.delete(coord);
-      const newX = foldCoord === "x" ? x - distanceToLine * 2 : x;
-      const newY = foldCoord === "y" ? y - distanceToLine * 2 : y;
+      const distanceToFold = foldingCoordinate - foldNum;
+      const newX = foldCoord === "x" ? x - distanceToFold * 2 : x;
+      const newY = foldCoord === "y" ? y - distanceToFold * 2 : y;
       const newCoord = `${newX},${newY}`;
       
-      updatedDotsMap.add(newCoord);
+      dotsMap.delete(coord);
+      dotsMap.add(newCoord);
     }
   }
-  dotsMap = updatedDotsMap;
 };
 
 fold(instructions[0]);
